@@ -1,0 +1,20 @@
+CREATE DATABASE studentsdb;
+
+CREATE TABLE students (
+	student_id serial PRIMARY KEY,
+	name VARCHAR ( 100 ) NOT NULL,
+	last_name VARCHAR ( 100 ) NOT NULL,
+	birthday DATE NOT NULL,
+	id_number INTEGER NOT NULL,
+	email VARCHAR ( 100 ) NOT NULL,
+	gender SMALLINT NOT NULL,
+	phone_1 INTEGER,
+	phone_2 INTEGER,
+	phone_reference INTEGER,
+	marital_status	SMALLINT,
+	address VARCHAR ( 100 ) NOT NULL,
+        country SMALLINT NOT NULL,
+	city SMALLINT NOT NULL,
+	postal_code VARCHAR ( 100 ),
+	other VARCHAR ( 100 )
+);
