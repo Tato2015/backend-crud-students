@@ -1,6 +1,7 @@
 package com.crud.students.controller;
 
 import com.crud.students.model.Student;
+import com.crud.students.model.dto.StudentDto;
 import com.crud.students.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +18,10 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping
-    public ResponseEntity<List<Student>> getAllStudents()throws Exception{
-        List<Student> students = studentService.getAll();
-        return new ResponseEntity<List<Student>>(students, HttpStatus.OK);
+    public ResponseEntity<List<StudentDto>> getAllStudents()throws Exception{
+        //List<Student> students = studentService.getAll();
+        List<StudentDto> studentsDto = studentService.getStudentsDto();
+        return new ResponseEntity<List<StudentDto>>(studentsDto, HttpStatus.OK);
     }
 
     @PostMapping
